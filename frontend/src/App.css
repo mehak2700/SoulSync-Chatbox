@@ -1,0 +1,147 @@
+:root {
+  --user-bg: #c8e6c9;
+  --bot-bg: #ffe0e0;
+  --feedback-bg: #fff8e1;
+  --primary: #00acc1;
+  --text: #333;
+  --font: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #e0f7fa;
+  font-family: var(--font);
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: var(--user-bg);
+  color: var(--text);
+  border-bottom-right-radius: 0;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: var(--bot-bg);
+  color: var(--text);
+  border-bottom-left-radius: 0;
+}
+
+.message.feedback {
+  align-self: center;
+  background-color: var(--feedback-bg);
+  font-weight: bold;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+input {
+  flex: 1 1 300px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #00838f;
+}
+
+.feedback-box {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.feedback-box button {
+  margin: 0 4px;
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: #ffcc80;
+  color: #333;
+  border-radius: 6px;
+}
+
+.feedback-box button:hover {
+  background-color: #ffb74d;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-box {
+    height: 55vh;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  .App {
+    padding: 10px;
+  }
+}
+

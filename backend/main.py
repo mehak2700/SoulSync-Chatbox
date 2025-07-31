@@ -38,8 +38,8 @@ mood_suggestions = {
 def read_root():
     return {"message": "Welcome to the SoulSync Emotion Classifier API"}
 
-@app.post("/detect_mood/")
-async def detect_mood(req: MoodRequest):
+@app.post("/analyze")
+async def analyze(req: MoodRequest):
     try:
         prediction = emotion_classifier(req.text)
         top_emotion = prediction[0]['label']

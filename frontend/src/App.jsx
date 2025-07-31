@@ -14,7 +14,7 @@ function App() {
     setMessages(prev => [...prev, { type: 'user', text: input }]);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/detect_mood/', {
+      const response = await axios.post("http://127.0.0.1:8000/analyze", {
         text: input,
       }, { timeout: 2000 });
 
